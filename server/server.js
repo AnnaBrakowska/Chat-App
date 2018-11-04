@@ -18,8 +18,8 @@ io.on("connection", socket => {
   console.log("New user connected");
 
   socket.emit("newMessage", {
-    from: "admin@gmail.com",
-    text: " Hello",
+    from: "Admin",
+    text: "Hello",
     createdAt: new Date(Date.now())
   });
 

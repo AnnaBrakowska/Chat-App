@@ -9,10 +9,20 @@ socket.on("newMessage", function(message) {
   console.log("New message ", message);
 });
 
-socket.emit("createMessage", {
-  from: "Client",
-  text: "Hello",
-  createdAt: new Date(Date.now())
+document.querySelector("#send").addEventListener("click", function() {
+  console.log("Hello");
+  function getMessage() {
+    let from = document.querySelector("#from").value;
+    let text = document.querySelector("#text").value;
+    let message = {
+      from: from,
+      text: text,
+      createdAt: new Date(Date.now())
+    };
+    console.log(from, text, message);
+    socket.emit("createMessage", message);
+  }
+  getMessage();
 });
 
 socket.on("disconnect", function() {

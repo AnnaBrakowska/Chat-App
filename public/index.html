@@ -3,11 +3,21 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <title>Chat App</title>
 </head>
 
 <body>
     <h1>Welcome to the Chat App</h1>
+    <div id="output">
+        See your messages here
+    </div>
+    <div id="container">
+        <input id="from" placeholder="Enter your name...">
+        <input id="text" placeholder="Enter your message...">
+        <button id="send">Send</button>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/index.js"></script>
 </body>
