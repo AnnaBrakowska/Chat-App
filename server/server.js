@@ -6,6 +6,6 @@ const path = require("path");
 const publicPath = path.join(__dirname, "../public");
 app.use(express.static(publicPath));
 
-app.listen(process.env.PORT, function() {
+app.listen(PORT, function() {
   console.log("Listening to port" + PORT);
 });
