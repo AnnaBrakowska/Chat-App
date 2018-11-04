@@ -17,14 +17,15 @@ app.use(express.static(publicPath));
 io.on("connection", socket => {
   console.log("New user connected");
 
-  socket.emit("newMessage", {
-    from: "Admin",
-    text: "Hello",
-    createdAt: new Date(Date.now())
-  });
-
+  //socket.on emits to one connection
+  //io.emit emmits to all connections
   socket.on("createMessage", newMessage => {
     console.log(newMessage);
+    io.emit("newMessage", {
+      from: newMessage.from,
+      test: newMessage.text,
+      createdAt: newMessage.createdAt
+    });
   });
 
   //single connection

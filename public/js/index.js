@@ -5,10 +5,6 @@ socket.on("connect", function() {
   console.log("Connected to server");
 });
 
-socket.on("newMessage", function(message) {
-  console.log("New message ", message);
-});
-
 document.querySelector("#send").addEventListener("click", function() {
   console.log("Hello");
   function getMessage() {
